@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Cotizador</title>
+</head>
+<body>
+     <div id="container" class="wraper">
+        <div class="div-1">
+        </div>
+        <div id="coin-container" class="div-2">
+            <h1>Cotizador</h1>
+            <form id="coin-form">
+                <div class="coin-input-container">
+                    <label for="coin">Elige tu moneda</label>
+                    <select class="coin-input" id="coin">
+                        <option selected disabled value="">Selecciona una moneda</option>
+                        <option value="USD">Dolar</option>
+                        <option value="EUR">Euros</option>
+                        <option value="ARS">Pesos Argentinos</option>
+                        <option value="VES">Bolivares</option>
+                        <option value="CNY">Yuan</option>
+                    </select>
+                </div>
+                <div class="coin-input-container">
+                    <label for="crypto">Elige tu cryptomoneda</label>
+                    <select class="coin-input" id="crypto">
+                        <option selected disabled value="">Selecciona una cryptomoneda</option>
+                        <option value="BTC">Bitcoin</option>
+                        <option value="ETH">Ethereum</option>
+                        <option value="AXS">AXS</option>
+                        <option value="BNB">Binance Coin</option>
+                    </select>
+                </div>
+                <div class="coin-input-container">
+                    <label for="amount">Monto</label>
+                    <input type="number" class="coin-input" id="amount" placeholder="Ingresa un monto">
+                </div>
+                <button id="form-btn" type="submit">Cotizar</button>
+            </form>
+            
+            <div id="coin-info">
+            </div>
+
+        </div>
+    </div>
+
+    <script src="empanada.js"></script>
+</body>
+</html>
