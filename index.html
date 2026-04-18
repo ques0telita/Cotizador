@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cotizador</title>
+</head>
+<body>
+    <video class="bg-video" src="BG-crypto.mp4" autoplay muted loop></video>
+    <div id="container">
+        <div id="coin-container">
+            <form id="coin-form">
+                <div class="coin-input-container">
+                    <label for="coin">Moneda</label>
+                    <select class="coin-input" id="coin">
+                        <option selected disabled value="">Selecciona tu moneda</option>
+                        <option value="USD">DOLAR</option>
+                        <option value="EUR">EURO</option>
+                        <option value="CNY">YUAN</option>
+                        <option value="VES">BOLIVARES</option>
+                    </select>
+                </div>
+                <div class="coin-input-container">
+                    <label for="crypto">CryptoMoneda</label>
+                    <select class="coin-input" id="crypto">
+                        <option id="casillero" selected disabled value="">Selecciona tu CryptoMoneda</option>
+                        <option value="BTC">BITCOIN</option>
+                        <option value="ETH">ETHEREUM</option>
+                        <option value="BNB">BINANCE</option>
+                        <option value="XRP">RIPPLE</option>
+                    </select>
+                </div>
+                <div class="coin-input-container">
+                    <label for="amount">Ingresa el monto a cotizar</label>
+                    <input type="number" class="coin-input" id="amount" placeholder="Monto a cotizar">
+                </div>
+                <button id="form-btn" type="submit">Cotizar</button>
+            </form>
+            <div id="coin-info">
+                <p class="info">El valor es: <span class="price">0</span></p>
+                <p class="info">El valor mas bajo es: <span class="price">0</span></p>
+                <p class="info">El valor mas alto es: <span class="price">0</span></p>
+                <p class="info">Variacion 24H: <span class="price">0%</span></p>
+                <p class="info">Puede comprar: <span class="price">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
