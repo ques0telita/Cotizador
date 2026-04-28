@@ -12,12 +12,13 @@ const amountElement = document.querySelector('#amount');
 esa función, lo que facilita la escritura de código asíncrono de manera más legible y estructurada*/
 form.addEventListener('submit', async e => {
     e.preventDefault();
+    //[...coin.children] se utiliza para convertir los elementos hijos de "coin" en un array, lo que permite métodos de array como "find", y es un tipo de valor: NodeList, que es una colección de nodos que se obtiene al seleccionar elementos del DOM. Al convertirlo en un array, se pueden utilizar métodos de array para manipular y acceder a los elementos de manera más flexible.
     const coinSelected = [...coin.children].find(option => option.selected).value;
     const cryptoSelected = [...crypto.children].find(option => option.selected).value;
     const amountValue = amount.value;
 
     try {
-
+        // el doble await se utiliza para esperar a que se resuelva la promesa de la función fetch, y luego esperar a que se resuelva la promesa de la función json() que procesa la respuesta de la API. Esto permite obtener los datos de manera asíncrona y manejar la respuesta de la API de forma más sencilla.
         const response = await (await fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptoSelected}&tsyms=${coinSelected}`)).json();
 
         const displayPrice = response.DISPLAY[cryptoSelected][coinSelected].PRICE;
@@ -26,7 +27,7 @@ form.addEventListener('submit', async e => {
         const change24Hour = response.DISPLAY[cryptoSelected][coinSelected].CHANGE24HOUR;
         const rawPrice = response.RAW[cryptoSelected][coinSelected].PRICE;
 
-        
+        //Number() se utiliza para convertir el valor de amountValue a un número, porque lo que permite realizar cálculos matemáticos con él.
         const amountNumber = Number(amountValue);
         const result = amountValue === '' || Number.isNaN(amountNumber) || amountNumber === 0
             ? 0
