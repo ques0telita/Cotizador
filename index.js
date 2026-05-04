@@ -8,8 +8,7 @@ const highPriceElement = document.querySelector('#high-price');
 const variationElement = document.querySelector('#change-24h');
 const amountElement = document.querySelector('#amount');
 
-/* async se utiliza para declarar una función asíncrona, lo que permite el uso de la palabra clave "await" dentro de 
-esa función, lo que facilita la escritura de código asíncrono de manera más legible y estructurada*/
+
 form.addEventListener('submit', async e => {
     e.preventDefault();
     
