@@ -8,9 +8,11 @@ const highPriceElement = document.querySelector('#high-price');
 const variationElement = document.querySelector('#change-24h');
 const amountElement = document.querySelector('#amount');
 
-
+/* async se utiliza para declarar una función asíncrona, lo que permite el uso de la palabra clave "await" dentro de 
+esa función, lo que facilita la escritura de código asíncrono de manera más legible y estructurada*/
 form.addEventListener('submit', async e => {
     e.preventDefault();
+    
     const coinSelected = [...coin.children].find(option => option.selected).value;
     const cryptoSelected = [...crypto.children].find(option => option.selected).value;
     const amountValue = amount.value;
@@ -24,7 +26,10 @@ form.addEventListener('submit', async e => {
         const change24Hour = response.DISPLAY[cryptoSelected][coinSelected].CHANGE24HOUR;
         const rawPrice = response.RAW[cryptoSelected][coinSelected].PRICE;
 
+        //Number() se utiliza para convertir el valor de amountValue a un número, porque lo que permite realizar cálculos matemáticos con él.
+        //Number no es un tipo de dato simple, sino que es un objeto constructor (o función constructora) nativo del lenguaje.
         const amountNumber = Number(amountValue);
+        // las dos rayitas es para decir "o tambien..."
         const result = amountValue === '' || Number.isNaN(amountNumber) || amountNumber === 0
             ? 0
             : (amountNumber / rawPrice).toFixed(6);
